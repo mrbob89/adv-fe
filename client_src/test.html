@@ -8,38 +8,38 @@
 		.even {
 			background: #ccc;
 		}
-    </style>
+	</style>
 </head>
 <body>
-	
 	<div class="post-json">
-		
+
 	</div>
 
 	<div class="posts-table">
-		
+
 	</div>
 
 	<script id="posts-json-template" type="text/x-handlebars-template">
-		<pre>{{json posts}}</pre>
-    </script>
+		{{{json posts}}}
+	</script>
 
-    <script id="table-json-template" type="text/x-handlebars-template">
-		{{#stripes posts "even" "odd"}}
-	        {{> description}}
-	    {{/stripes}}
-    </script>
+	<script id="table-json-template" type="text/x-handlebars-template">
+		{{#stripes posts}}
+			{{> description}}
+		{{/stripes}}
+	</script>
 
-    <script id="description-post-partial" type="text/x-handlebars-template">
-    	<div class="description {{stripeClass}}">
-    		{{description}}
-    	</div>
-    </script>
+	<script id="description-post-partial" type="text/x-handlebars-template">
+		<div class="description {{stripeClass}}">
+			{{description}}
+		</div>
+	</script>
 
 	<!-- Load Scripts -->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="libs/handlebars/handlebars.min.js"></script>
 	<script src="js/data.js"></script>
 	<script src="js/test.js"></script>
+
 </body>
 </html>

@@ -1,100 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
+    <meta charset="utf-8">
 
-	<meta charset="utf-8">
+    <title>Пост</title>
+    <meta name="description" content="">
 
-	<title>Пост</title>
-	<meta name="description" content="">
+    <link rel="stylesheet" href="css/grid.min.css">
+    <link rel="stylesheet" href="css/masonry.css">
 
-	<link rel="stylesheet" href="css/grid.min.css">
-	<link rel="stylesheet" href="css/masonry.css">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 
 <body>
 
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-3">
-					<a href="#" class="logo">Logo</a>
-				</div>
-				<div class="col-xs-12 col-sm-3 col-sm-offset-6 header__mail">
-					<span class="pull-right">romanboboshko@gmail.com</span>
-				</div>
-			</div>
-		</div>
-	</header>
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <a href="#" class="logo">Logo</a>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-sm-offset-6 header__mail">
+                <span class="pull-right">romanboboshko@gmail.com</span>
+            </div>
+        </div>
+    </div>
+</header>
 
-	<section class="user-post">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 main-photo__thumb">
-					<img src="images/fbcover.png" class="img-responsive" alt="Фото профиля">
-				</div>
-				<div class="col-xs-12 main-photo__descript">
-					<span>Roman:</span> Test test test
-				</div>
-			</div>
-		</div>
-	</section>
+<section class="user-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 main-photo__thumb">
+                <img src="images/fbcover.png" class="img-responsive" alt="Фото профиля">
+            </div>
+            <div class="col-xs-12 main-photo__descript">
+                <span>Roman:</span> Test test test
+            </div>
+        </div>
+    </div>
+</section>
 
-	<section class="comments">
-		<div class="container">
-			<div class="row">
-				
-			</div>
-		</div>
-	</section>
+<section class="comments">
+    <div class="container">
+        <div class="row">
 
-	<section class="related-posts grid container">
-		<div class="posts">
-			
-		</div>
-	</section>
+        </div>
+    </div>
+</section>
 
-	<script id="related-posts-template" type="text/x-handlebars-template">
-		{{#each posts}}
-			{{> relPost}}
-		{{/each}}
-    </script>
+<section class="related-posts grid container">
+    <div class="posts">
 
-    <script id="related-post-partial" type="text/x-handlebars-template">
-    	<div class="related-post post">
-    		<div class="related-post__thumb">
-    			<img src={{imgUrl}} class="img-responsive" alt="">
-    		</div>
-    		<h2 class="related-posts__user">
-    			{{userId}}
-    		</h2>
-    	</div>
-    </script>
+    </div>
+</section>
 
-    <script id="all-comments-template" type="text/x-handlebars-template">
-    	{{#each comments}}
-			{{> oneComment}}
-		{{/each}}
-    </script>
+<script id="related-posts-template" type="text/x-handlebars-template">
+    {{#each posts}}
+        {{> related-post}}
+    {{/each}}
+</script>
 
-    <script id="one-comment-partial" type="text/x-handlebars-template">
-    	<div class="col-xs-12 one-comment">
-    		<span class="one-comment__name">{{username}}: </span>
-    		<span class="one-comment__content">{{text}}</span>
-    	</div>
-    </script>
+<script id="related-post-partial" type="text/x-handlebars-template">
+    <div class="related-post post">
+        <div class="related-post__thumb">
+            <img src={{imgUrl}} class="img-responsive" alt="">
+        </div>
+        <h2 class="related-posts__user">
+            {{userId}}
+        </h2>
+    </div>
+</script>
 
-	<!-- Load Scripts -->
-	<script src="libs/jquery/dist/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
-	<script src="libs/handlebars/handlebars.min.js"></script>
-	<script src="js/data.js"></script>
-	<script src="js/post.js"></script>
-	<script src="js/masonry.js"></script>
+<script id="comments-template" type="text/x-handlebars-template">
+    {{#each comments}}
+        {{> comment}}
+    {{/each}}
+</script>
+
+<script id="comment-partial" type="text/x-handlebars-template">
+    <div class="col-xs-12 one-comment">
+        <span class="one-comment__name">{{username}}: </span>
+        <span class="one-comment__content">{{text}}</span>
+    </div>
+</script>
+
+<!-- Load Scripts -->
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
+<script src="libs/handlebars/handlebars.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/post.js"></script>
+<script src="js/masonry.js"></script>
 
 </body>
 </html>
