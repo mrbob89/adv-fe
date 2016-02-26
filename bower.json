@@ -1,0 +1,26 @@
+{
+  "name": "adv-fe",
+  "description": "Advanced front-end",
+  "main": "index.js",
+  "authors": [
+    "bobo89 <romanboboshko89@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mrbob89/adv-fe",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "jquery": "^2.2.1",
+    "angular": "^1.5.0",
+    "underscore": "1.8.3",
+    "react": ">0.1.0",
+    "backbone": "<2.0.0 >1.0.0"
+  }
+}
