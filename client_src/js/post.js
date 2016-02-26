@@ -10,9 +10,7 @@ $(document).ready(function() {
 	Handlebars.registerPartial("oneComment", $("#one-comment-partial").html());
 
 	var dataPosts = {
-		posts: function () {
-			return posts;
-		}
+		posts: posts,
     };
     var dataComments = {
     	comments: function () {
