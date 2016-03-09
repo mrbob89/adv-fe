@@ -14,6 +14,10 @@ var watch = require('gulp-watch');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
+var csscomb = require('gulp-csscomb');
+var jscs = require('gulp-jscs');
+var jshint = require('gulp-jshint');
+var htmlhint = require("gulp-htmlhint");
 var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
     autoprefix= new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
 
@@ -59,6 +63,7 @@ gulp.task('css', function () {
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(concat('styles.css'))
+        .pipe(csscomb())
         .pipe(gulpif(argv.prod, cssnano()))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destDir + '/static'));
@@ -90,4 +95,15 @@ gulp.task( 'watch', function () {
     gulp.watch(baseDir + '**/*.@(png|jpg|js)', [ 'copy-static' ] );
     gulp.watch(baseDir + '/less/**/*.*', [ 'css' ] );
     gulp.watch(baseDir + '**/*.@(html|js|less)', [ 'default' ] );
+});
+
+gulp.task('jscs', () => {
+    return gulp.src(baseDir + '/js/**/*.js')
+        .pipe(jscs({fix: true}))
+        .pipe(gulp.dest(destDir + '/js'));
+});
+
+gulp.task('lint', function() {
+  return gulp.src(baseDir + '/js/**/*.js')
+    .pipe(jshint());
 });
